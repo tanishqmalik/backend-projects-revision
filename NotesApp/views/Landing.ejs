@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex flex-row">
+    <div class="w-[250px] bg-black h-screen text-white p-5">
+        Files ⬇️
+
+        <div class="pt-10 flex flex-col gap-2">
+
+            
+            <% if(files.length>0){  %>
+                <% files.forEach((val,index)=>{ %>
+                    <div class="relative flex items-center">
+                        <span><%= val%></span>
+                        <a href="/viewdata/<%=val%>"><button id="buttonOne"  class="absolute right-0 bottom-[10%]">...</button></a>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+    </div>
+
+
+
+    <div class="bg-neutral-700 w-full relative">
+        <div>
+            <h1 class="text-white text-4xl font-bold p-10">Notes App</h1>
+        </div>
+        <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center">
+
+            <h2 class="text-white text-3xl ">Don't forget anything you write.</h2>
+            <form action="/create" method="post" class="pt-10 flex flex-col gap-4 items-center justify-center">
+                <div>
+                    <label for="filename" class="text-white">Enter Filename :</label>
+                    <input required id="filename" class="bg-neutral-400 pl-2 outline-none rounded-xl" name="filename">
+                </div>
+                <div class="flex items-center gap-2">
+                    <label for="textarea" class="text-white">Enter Text :</label>
+                    <textarea required id="textarea" class="bg-neutral-400 pl-2 outline-none rounded-xl" name="textarea"></textarea>
+                </div>
+
+                <button class="bg-neutral-400 p-1 rounded-xl">Create Note</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- <script>
+        function toggleButtons(index){
+            const buttonOne = document.getElementById(`buttonContainer-${index}`)
+            buttonOne.classList.toggle('hidden')
+        }
+    </script> -->
+
+
+    <!-- <script src="/js/logic.js"></> -->
+</body>
+
+</html>
