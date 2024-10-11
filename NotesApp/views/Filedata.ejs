@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div>
-        <h1><%= filename %></h1>
+    <div class="bg-neutral-700 w-full h-screen ">
+        <h1 class="text-4xl font-bold p-10 text-white"><%= filename %></h1>
+
+        <p class="pl-10 text-white"><%=filedata%></p>
+
+        <div class="pt-10 pl-10">
+            <a href="/updatetitle/<%=filename%>"><button class="bg-black text-white p-2 rounded-full hover:bg-neutral-800">Edit Title</button></a>
+            <a href="/updatedata/<%=filename%>/<%=filedata%>"><button class="bg-black text-white p-2 rounded-full hover:bg-neutral-800">Edit Details</button></a>
+        </div>
     </div>
 </body>
 </html>

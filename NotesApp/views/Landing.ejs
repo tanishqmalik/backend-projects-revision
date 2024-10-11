@@ -19,7 +19,11 @@
                 <% files.forEach((val,index)=>{ %>
                     <div class="relative flex items-center">
                         <span><%= val%></span>
-                        <a href="/viewdata/<%=val%>"><button id="buttonOne"  class="absolute right-0 bottom-[10%]">...</button></a>
+                        <div class="absolute right-0 bottom-[10%]">
+                        <a href="/viewdata/<%=val%>"><button id="buttonOne"  >...</button></a>
+                        <a href="/deletefile/<%=val %>"><button class="text-red">D</button></a>
+                    </div>
+                        
                     </div>
                 <% }) %>
             <% } %>

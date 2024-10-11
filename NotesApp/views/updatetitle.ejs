@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="bg-neutral-700 w-full h-screen">
+        <div>
+            <h1 class="text-3xl font-bold p-10 text-white">Title: <%=filename  %></h1>
+        </div>
+        <form action="/updatetitle/<%=filename %>" method="post" class="p-10">
+                <label for="initial" class="text-3xl font-bold  text-white">initial Title:- </label>
+                <input id="initial" name="initial" value="<%=filename %>" readonly class="bg-neutral-400 pl-2 outline-none rounded-xl">
+
+                <label for="updatetitle" class="text-3xl font-bold  text-white">Update Title:- </label>
+                <input id="updatetitle" name="updatetitle" class="bg-neutral-400 pl-2 outline-none rounded-xl">
+                <br>
+                <button class=" mt-10 p-2  bg-black text-white rounded-full hover:bg-neutral-800">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+<!-- <div class="bg-neutral-700 w-full h-screen ">
+    <h1 class="text-4xl font-bold p-10 text-white"><%= filename %></h1>
+
+    <p class="pl-10 text-white"><%=filedata%></p>
+
+    <div class="pt-10 pl-10">
+        <a href="/updatetitle/<%=filename%>"><button class="bg-black text-white p-2 rounded-full hover:bg-neutral-800">Edit Title</button></a>
+        <a href="/updatedata/<%=filename%>"><button class="bg-black text-white p-2 rounded-full hover:bg-neutral-800">Edit Details</button></a>
+    </div>
+</div> -->

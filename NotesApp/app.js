@@ -36,6 +36,34 @@ app.get('/viewdata/:filename',  (req,res)=>{
     })
 })
 
+app.get('/updatetitle/:filename', (req,res)=>{
+    fs.readFile(`./files/${req.params.filename}`, (err,filedata)=>{
+        res.render('updatetitle', {filename: req.params.filename, filedata});
+    })
+})
+
+app.post(`/updatetitle/:filename`,(req,res)=>{
+    fs.rename(`./files/${req.body.initial}`, `./files/${req.body.updatetitle.split(' ').join(' ')}.txt`, (err)=>{
+        res.redirect('/')
+    })
+})
+
+app.get('/updatedata/:filename/:filedata', (req,res)=>{
+    res.render('updatedata',{filename: req.params.filename, filedata: req.params.filedata})
+})
+
+app.post('/updatedata/:filename/:filedata', (req,res)=>{
+    fs.writeFile(`./files/${req.params.filename}`, req.body.updatedata, (err)=>{
+        res.redirect('/')
+    })
+})
+
+app.get('/deletefile/:filename', (req,res)=>{
+    fs.unlink(`./files/${req.params.filename}`, (err)=>{
+        res.redirect('/')
+    })
+})
+
 app.listen(port, ()=>{
     console.log(`your server is running on port ${port}`);
 })
