@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Update this product</h1>
+
+    <div>
+        <form method="post" action="/products/<%=foundProduct.id%>">
+            <label for="name">Name</label>
+            <input id="name" name="updatedName" type="text" value="<%=foundProduct.name%>">
+            <br>
+            <br>
+            <label for="price">Price</label>
+            <input id="price" name="updatedPrice" type="number" value="<%=foundProduct.price%>">
+            <br>
+            <br>
+            <label for="category">Category</label>
+            <input id="category" name="updatedCategory" value="<%=foundProduct.category%>">
+
+            <button>save</button>
+        </form>
+    </div>
+</body>
+</html>

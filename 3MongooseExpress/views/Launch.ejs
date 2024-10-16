@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All Products</h1>
+    <ul>
+    <% products.forEach(Product=>{ %>
+        <a href="products/<%=Product.id%>"><li><%= Product.name%></li></a>
+        <br>
+    <% }) %>
+
+    <a href="products/addnew">Add a Product</a>
+</ul>
+</body>
+</html>

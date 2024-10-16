@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%=foundProduct.name%></h1>
+    <ul>
+        <li>Price:- <%=foundProduct.price%></li>
+        <li>Category:- <%=foundProduct.category%></li>
+    </ul>
+
+    <a href="/products">All Products</a>
+    <br>
+    <a href="/products/update/<%=foundProduct.id%>">update Product</a>
+    <br>
+    <a href="/products/delete/<%=foundProduct.id%>">Delete This Product</a>
+</body>
+</html>
