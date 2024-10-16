@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%=foundcomment.username%>-<br><span><%=foundcomment.comment%></span></h1>
+    <form method="post" action="/editcomment/<%=foundcomment.id%>">
+        <label for="editcomment">Edit comment</label>
+        <input id="editcomment" name="editcomment" value="<%= foundcomment.comment %>" > </input>
+        <button>Save</button>
+    </form>
+</body>
+</html>
