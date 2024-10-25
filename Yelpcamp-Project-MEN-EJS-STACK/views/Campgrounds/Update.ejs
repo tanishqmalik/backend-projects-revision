@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div>
-        <form class="flex flex-col" action="/campgrounds" method="post">
-            <div>
+    <form class="flex flex-col" action="/campgrounds/:id" method="post">
+        <div>
+        <label>Title :- </label>
+        <input readonly class="bg-slate-400 pl-4" type="text" value="<%=foundcampground.title%>">
+        <!-- </div>
+
+        <div> -->
+        <label>location :-</label>
+        <input readonly class="bg-slate-400 pl-4" value="<%=foundcampground.location%>">
+        </div>
+
+
+        <div>
             <label for="newtitle">Title :- </label>
             <input id="newtitle" class="bg-slate-400 pl-4" type="text" name="newtitle">
             <!-- </div>
@@ -18,10 +26,9 @@
             <div> -->
             <label for="newloc">location :-</label>
             <input class="bg-slate-400 pl-4" id="newloc" type="text" name="newloc">
-            <!-- </div> -->
+        </div>
 
-            <button class="w-[30px]">Submit</button>
-        </form>
-    </div>
+        <button class="w-[30px]">Submit</button>
+    </form>
 </body>
 </html>
